@@ -83,6 +83,7 @@
     .gallery img:hover {
       filter: grayscale(0);
       transform: scale(1.02);
+      box-shadow: 10px 10px 10px rgba(44, 44, 44, 0.5);
     }
 
     /* Lightbox */
@@ -177,10 +178,11 @@
     .contact-info a:hover {
       transform: translateY(-3px);
       opacity: 0.9;
+      box-shadow: 10px 10px 10px rgba(102, 102, 102, 0.5);
     }
 
     .contact-info a:active {
-      transform: scale(0.95);
+      transform: scale(1.95);
     }
 
     /* Footer */
