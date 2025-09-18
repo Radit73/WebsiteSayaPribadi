@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just a Website</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111; /* hitam */
+      color: #ddd; /* putih pucat */
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #000;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #ddd;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: white;
+    }
+
+    /* Section */
+    section {
+      padding: 100px 40px 50px;
+      min-height: 25vh;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-auto-rows: 300px;
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      filter: grayscale(0);
+      transform: scale(1.02);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+        width: auto;
+        height: auto;
+        max-width: 80vw;   /* maksimal 80% dari lebar layar */
+        max-height: 80vh;  /* maksimal 80% dari tinggi layar */
+        object-fit: contain; /* biar rasio gambar tetap terjaga */
+        border-radius: 8px;
+    }
+
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    /* About */
+    .about {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      text-align: left;
+    }
+
+    .about img {
+      flex: 1 1 45%;
+      max-width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .about-text {
+      flex: 1 1 45%;
+    }
+
+    .about-text h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .about-text p {
+      color: #ccc;
+      font-size: 18px;
+    }
+
+    /* Contact */
+    .contact {
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 20px;
+    }
+
+    .contact-info {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .contact-info p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #777;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about img, .about-text {
+        flex: 1 1 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">AFRIZAL</div>
+    <ul>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2 style="text-align:center; margin-bottom:30px;">My Gallery</h2>
+    <div class="gallery">
+      <a href="#img1"><img src="img\20250916_0942_Dog House Futuristik_remix_01k5869bjte4grr1m54tah02wt.png" alt="Foto 1"></a>
+      <a href="#img2"><img src="img\20250916_1016_Kaos Polos Kreatif_remix_01k58875f0e50apv181am05m8v.png" alt="Foto 2"></a>
+      <a href="#img3"><img src="img\20250916_0933_Kapten Goblin Bertualang_remix_01k585snctffzr7ddfy1y1adma.png" alt="Foto 3"></a>
+      <a href="#img4"><img src="img\20250911_1026_Kartu Tarot Endure_remix_01k4vcvfs8e6pa2ccx24rt4emn.png" alt="Foto 4"></a>
+      <a href="#img5"><img src="img\20250917_2037_Psycho Komik Berwarna_remix_01k5by6pppepkv9gs8x74rrz0p.png" alt="Foto 5"></a>
+      <a href="#img6"><img src="img\20250917_2015_Karakter di Kota Rusuh_remix_01k5bwxxxtewcvgp17j6yd5pxn.png" alt="Foto 6"></a>
+    </div>
+  </section>
+
+  <!-- Lightbox images -->
+  <div id="img1" class="lightbox"><a href="#"><img src="img\20250916_0942_Dog House Futuristik_remix_01k5869bjte4grr1m54tah02wt.png"></a></div>
+  <div id="img2" class="lightbox"><a href="#"><img src="img\20250916_1016_Kaos Polos Kreatif_remix_01k58875f0e50apv181am05m8v.png"></a></div>
+  <div id="img3" class="lightbox"><a href="#"><img src="img\20250916_0933_Kapten Goblin Bertualang_remix_01k585snctffzr7ddfy1y1adma.png"></a></div>
+  <div id="img4" class="lightbox"><a href="#"><img src="img\20250911_1026_Kartu Tarot Endure_remix_01k4vcvfs8e6pa2ccx24rt4emn.png"></a></div>
+  <div id="img5" class="lightbox"><a href="#"><img src="img\20250917_2037_Psycho Komik Berwarna_remix_01k5by6pppepkv9gs8x74rrz0p.png"></a></div>
+  <div id="img6" class="lightbox"><a href="#"><img src="img\20250917_2015_Karakter di Kota Rusuh_remix_01k5bwxxxtewcvgp17j6yd5pxn.png"></a></div>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <img src="img\20250918_0903_Karakter Berambut Ikal Panjang_remix_01k5d8w7q7ek08393c0j6nysp8.png" alt="Foto Afrizal">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        Name? Afrizal Raditya Fasya.  
+        I like tinkering things, exploring new tech, and play game.  
+        The hell I don't know what this website is for..  
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact Me? what for?</h2>
+    <div class="contact-info">
+      <a href="https://wa.me/6287873460446?text=Hey%20Man" target="_blank" style="color:#25D366; text-decoration:none; font-size:20px;">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+
+      <a href="mailto:darkeves72@gmail.com?subject=Hello%20Afrizal&body=Hey%20man" style="color:#ddd; text-decoration:none; font-size:20px;">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+
+      <a href="https://instagram.com/frzlrdtyfsy" target="_blank" style="color:#E1306C; text-decoration:none; font-size:20px;">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Afrizal Raditya Fasya. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
